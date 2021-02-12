@@ -1,5 +1,6 @@
 import { _checkIsHttpToken, _checkInvalidHeaderChar } from '_http_common'; // eslint-disable-line
 import portastic from 'portastic';
+
 // import through from 'through';
 
 const HOST_HEADER_REGEX = /^((([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9-]*[A-Za-z0-9]))(:([0-9]+))?$/;
@@ -80,9 +81,9 @@ export const parseUrl = (url) => {
             hash: urlObj.hash,
             host: urlObj.host,
             hostname: urlObj.hostname,
-            href: urlObj.href,
+            href: url,
             origin: urlObj.origin,
-            password: urlObj.password,
+            password: urlObj.password.replace(/%3A/g, ':'),
             username: urlObj.username,
             pathname: urlObj.pathname,
             // Path was present on the original UrlObject, it's kept for backwards compatibility

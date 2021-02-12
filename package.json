@@ -44,6 +44,7 @@
     "node": ">=10"
   },
   "dependencies": {
+    "https-proxy-agent": "^5.0.0",
     "portastic": "^1.0.1",
     "underscore": "^1.9.1"
   },
